@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bikes on Buses </title>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.2/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.2/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.2/css/bootstrap-theme.css" />
+    <style type="text/css">
+        .sampleimg {
+            width:320px;
+            height:240px;
+        }
+
+        .sampleval {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h3>Bikes and buses</h3>
+            <p>
+                <span class="label label-info">Directions</span>
+                Look at the set of images below. Find the number of bikes in the bike rack (none, 1, 2, or 3)
+                as well as the route number and vehicle number.
+            </p>
+        </div>
+
+        <div class="row">
+            <h4>Examples</h4>
+            <p>
+                In the pictures below, the bike rack is outlined in <span style="border:2px solid skyblue">blue</span>,
+                the route number in  <span style="border:2px solid red">red</span>, and the
+                vehicle number in <span style="border:2px solid lime">green</span>.
+            </p>
+            <div class="col-md-3">
+                <a href="#" class="thumbnail">
+                    <img src="img/eastbase-9612-0b.jpg" class="sampleimg" />
+                </a>
+                <div>Route <span class="sampleval">unknown</span>, vehicle <span class="sampleval">9612</span>, <span style="text-wrap:avoid"><span class="sampleval">0</span> bicycles.</span></div>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="thumbnail">
+                    <img src="img/545-9808-0b.jpg" class="sampleimg" />
+                </a>
+                <div>Route <span class="sampleval">545</span>, vehicle <span class="sampleval">9808</span>, <span style="text-wrap:avoid"><span class="sampleval">0</span> bicycles.</span></div>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="thumbnail">
+                    <img src="img/unk-9536-2b.jpg" class="sampleimg" />
+                </a>
+                <div>Route <span class="sampleval">unknown</span>, vehicle <span class="sampleval">9536</span>, <span style="text-wrap:avoid"><span class="sampleval">2</span> bicycles.</span></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h4>Your task</h4>
+            <div>
+                <label for="route">Route number:</label>
+                <!--<input type="number" id="route" placeholder="123" />
+                <input type="checkbox" id="noroute" /> <label for="noroute">Can't read</label>-->
+                <select id="route">
+                    <option value="">unknown</option>
+                    <option value="48">48</option>
+                    <option value="255">255</option>
+                    <option value="271">271</option>
+                    <option value="542">542</option>
+                    <option value="545">545</option>
+                    <option value="566">566</option>
+                </select>
+            </div>
+            <div>
+                <label for="vehicle">Vehicle number:</label>
+                <input type="number" id="vehicle" placeholder="5678" />
+                <input type="checkbox" id="novehicle" /> <label for="novehicle">Can't tell</label>
+            </div>
+            <div>
+                <label>Number of bicycles on bus:</label>
+                <input type="radio" name="numbikes_0" id="nbr0" value="0" /> <label for="nbr0">0</label>
+                <input type="radio" name="numbikes_0" id="nbr1" value="1" /> <label for="nbr1">1</label>
+                <input type="radio" name="numbikes_0" id="nbr2" value="2" /> <label for="nbr2">2</label>
+                <input type="radio" name="numbikes_0" id="nbr3" value="3" /> <label for="nbr3">3</label>
+                <input type="radio" name="numbikes_0" id="nbrna" value="" /> <label for="nbrna">Can't tell</label>
+                <div>(If you see some bikes but can't be certain, select the lowest number that you can reliably tell.)</div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <img src="test-photos\01\G0010568.JPG" style="width:100%" alt="Picture of bus arriving at bus stop" />
+        </div>
+    </div>
+</body>
+</html>
