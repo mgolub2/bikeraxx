@@ -88,10 +88,17 @@ def putToApi(jpegs):
     :return:
     """
     for pic in jpegs:
-        pic = pic.split('.')[0]
-        print ("Posting to api: {0}".format(pic))
-        r = requests.put(backendUrl+pic.upper())
-        print(r.status_code)
+        #Weird and ugly
+        while True:
+            try:
+                pic = pic.split('.')[0]
+                print ("Posting to api: {0}".format(pic))
+                r = requests.put(backendUrl+pic.upper())
+                print(r.status_code)
+            except requests.exceptions.ConnectionError as e:
+                print (e)
+                continue
+            break
 
 dataArray = [0,0,0,0,0,0,0]
 
