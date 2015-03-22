@@ -1,0 +1,40 @@
+<cml:checkbox name="nobus" label="Cannot see a bus in this picture" default="false" gold="true" aggregation="agg"></cml:checkbox>
+
+<cml:group only-if="nobus:unchecked" name="" aggregation="">
+  <cml:select name="route" label="Route number" validates="required" gold="true" aggregation="agg">
+    <cml:option label="unknown" value="NA"></cml:option>
+    <cml:option label="48" value="48"></cml:option>
+    <cml:option label="255" value="255"></cml:option>
+    <cml:option label="271" value="271"></cml:option>
+    <cml:option label="542" value="542"></cml:option>
+    <cml:option label="545" value="545"></cml:option>
+    <cml:option label="566" value="566"></cml:option>
+  </cml:select>
+  
+  <cml:text name="vehicle" label="Vehicle number" instructions="leave blank if you can't see" gold="true" aggregation="all"></cml:text>
+  
+  <cml:radios label="At least how many bicycles are loaded on the bus?" validates="required" instructions="If you are certain you see 2 bikes, but are not sure about 3, select 2." gold="true" name="at_least_how_many_bicycles_are_loaded_on_the_bus" aggregation="agg"> 
+    <cml:radio label="can't tell" value="NA"></cml:radio> 
+    <cml:radio label="none" value="0"></cml:radio> 
+    <cml:radio label="1" value="1"></cml:radio> 
+    <cml:radio label="2" value="2"></cml:radio>
+    <cml:radio label="3" value="3"></cml:radio>
+  </cml:radios>
+</cml:group>
+  
+<img src="https://research.microsoft.com/en-US/UM/People/danl/civic/bikebus/test-photos/scale/{{image}}.JPG" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

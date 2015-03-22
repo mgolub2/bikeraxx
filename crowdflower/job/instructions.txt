@@ -1,0 +1,15 @@
+<p>Look at the images below. Find the number of bikes in the bike rack (none, 1, 2, or 3) as well as the route number and vehicle number.
+
+<div>
+    <h4>Examples</h4>
+    <table>
+        <tr>
+            <td><img src="https://research.microsoft.com/en-US/UM/People/danl/civic/bikebus/img/545-9808-0b.jpg" class="sampleimg" /></td>
+            <td><img src="https://research.microsoft.com/en-US/UM/People/danl/civic/bikebus/img/unk-9536-2b.jpg" class="sampleimg" /></td>
+        </tr>
+        <tr>
+            <td>Route <span class="sampleval routeBorder">545</span>, vehicle <span class="sampleval vehicleBorder">9808</span>, <span style="text-wrap:avoid"><span class="sampleval bikeBorder">0</span> bicycles.</span></td>
+            <td>Route <span class="sampleval routeBorder">unknown</span>, vehicle <span class="sampleval vehicleBorder">9536</span>, <span style="text-wrap:avoid"><span class="sampleval bikeBorder">2</span> bicycles.</span></td>
+        </tr>
+    </table>
+</div>

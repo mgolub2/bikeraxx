@@ -1,0 +1,22 @@
+.sampleimg {
+  width:320px;
+  height:240px;
+}
+
+.sampleval {
+  font-weight: bold;
+  border: 2px solid;
+}
+
+.vehicleBorder {
+  border-color: rgba(112, 223, 64, 1)
+}
+
+
+.routeBorder {
+  border-color: red;
+}
+
+.bikeBorder {
+  border-color: rgba(21, 142, 226, 1);
+}
