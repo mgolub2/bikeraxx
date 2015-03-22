@@ -69,7 +69,7 @@ def takePhoto():
     pulledFiles = pulledFiles.split('\n')
     for line in pulledFiles:
         if 'jpg' in line:
-            jpegs.append(line.split('/')[-1])
+            jpegs.append(line.split('/')[-1].upper())
     subprocess.call('adb shell "rm -rf /sdcard/DCIM/Camera/"', shell=True)
     subprocess.call('adb shell "mkdir /sdcard/DCIM/Camera/"', shell=True)
     return jpegs
