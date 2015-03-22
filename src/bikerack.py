@@ -36,7 +36,7 @@ def main():
         distance = readAio()
         trigger = trigDistance.read()
         print(distance, ' : ', trigger)
-        if distance < trigger:  # probs need to have a better deciding logic
+        if distance < trigger and distance:  # probs need to have a better deciding logic
             led.write(1)
             images = takePhoto()
             print images
