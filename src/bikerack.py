@@ -14,7 +14,7 @@ from azure.storage import BlobService
 backendUrl = 'http://bikeraxx.azurewebsites.net/api/Photo/'
 aioPort = 0
 numPhotos = 5
-triggerValue = 300
+triggerValue = 600
 scaleFactor = (5.0 / .0049)  # 5 volts and 4.9mv a centimeter
 x = mraa.Aio(aioPort)
 azureAccount = 'bikeraxx'
@@ -83,7 +83,10 @@ def putToApi(jpegs):
     """
     for pic in jpegs:
         print ("Posting to api: {0}".format(pic))
-        requests.put(backendUrl+pic.upper())
+        r = requests.put(backendUrl+pic.upper())
+        print(r.status_code)
+
+dataArray = [0,0,0,0,0,0,0]
 
 def readAio():
     """
@@ -91,7 +94,9 @@ def readAio():
     :return:
     """
     try:
-        return x.readFloat() * scaleFactor
+        dataArray.append(x.readFloat() * scaleFactor)
+        dataArray.pop(0)
+        return sum(dataArray)/float(len(dataArray))
     except:
         print ("ADC Error")
 
