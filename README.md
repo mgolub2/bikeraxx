@@ -12,6 +12,10 @@ The crowd work component of the system is intended to generate data that can be 
 
 ![Diagram showing parts of the project](assets/overview-slide.png)
 
+You can see a [video of us recording data on 3rd Avenue](https://www.youtube.com/watch?v=u7hVk-xnSJ4). The device worked, producing [photos like this](https://bikeraxx.blob.core.windows.net/images/20150322_133012.JPG) that were presented to crowd workers with an interface like the following:
+
+![Screenshot of crowd worker view](assets/crowdworker-ui.jpg)
+
 This application was developed during March 20-22 for the [Hack the Commute](http://hackthecommute.seattle.gov).
 
 ## Team Members
