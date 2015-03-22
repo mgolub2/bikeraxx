@@ -1,4 +1,5 @@
-# bikeraxx: Sensing bike rack use on buses
+# bikeraxx
+## Low cost sensing of bike rack use on buses
 
 King County Metro and Sound Transit buses provide bicycle racks on the front of each vehicle. Each rack holds 2-3 bikes.
 At certain stops, the bike rack use is so popular that the rack space is full and cyclists have to wait for the next bus, if there's space.
