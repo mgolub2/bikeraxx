@@ -69,7 +69,7 @@ def takePhoto():
     pulledFiles = pulledFiles.split('\n')
     for line in pulledFiles:
         if 'jpg' in line:
-            jpegs.append(line.split('/')[-1].upper())
+            jpegs.append(line.split('/')[-1])
     subprocess.call('adb shell "rm -rf /sdcard/DCIM/Camera/"', shell=True)
     subprocess.call('adb shell "mkdir /sdcard/DCIM/Camera/"', shell=True)
     return jpegs
@@ -83,7 +83,7 @@ def putToApi(jpegs):
     """
     for pic in jpegs:
         print ("Posting to api: {0}".format(pic))
-        requests.put(backendUrl+pic)
+        requests.put(backendUrl+pic.upper())
 
 def readAio():
     """
@@ -103,6 +103,7 @@ def putImage(image, blob_service):
     :param blob_service:
     :return:
     """
+    image = image.upper()
     blob_service.put_block_blob_from_path(
         container,
         image.split('/')[-1],  # just get the nbame without any potential path
