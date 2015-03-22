@@ -17,6 +17,9 @@ numPhotos = 5
 triggerValue = 600
 scaleFactor = (5.0 / .0049)  # 5 volts and 4.9mv a centimeter
 x = mraa.Aio(aioPort)
+trigDistance = mraa.Aio(5) # setable distance trigger
+led = mraa.Gpio(13)
+led.dir(mraa.DIR_OUT)
 azureAccount = 'bikeraxx'
 accountKey = 'EltOIT0eHKLIBz4R6uc5xcOE1TynZQJwZh8p/3HwGAR4RlhsD+L22ClBst0pVZcxScX6Mp9wt1KVJsw/yHJ65w=='
 container = 'images'
@@ -31,8 +34,10 @@ def main():
     subprocess.call('adb shell "am start -a android.media.action.STILL_IMAGE_CAMERA"', shell=True)
     while 1:
         distance = readAio()
-        print(distance)
-        if distance > triggerValue:  # probs need to have a better deciding logic
+        trigger = trigDistance.read()
+        print(distance, ' : ', trigger)
+        if distance < trigger:  # probs need to have a better deciding logic
+            led.write(1)
             images = takePhoto()
             print images
             for image in images:
@@ -40,6 +45,7 @@ def main():
                 putImage(image, blob_service)
             putToApi(images)
             deleteImages(images)
+        led.write(0)
         time.sleep(.1)
 
 def deleteImages(images):
