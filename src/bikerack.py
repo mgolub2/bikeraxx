@@ -103,10 +103,9 @@ def putImage(image, blob_service):
     :param blob_service:
     :return:
     """
-    image = image.upper()
     blob_service.put_block_blob_from_path(
         container,
-        image.split('/')[-1],  # just get the nbame without any potential path
+        image.split('/')[-1].upper(),  # just get the nbame without any potential path
         image,
         x_ms_blob_content_type='image/png'
     )
