@@ -7,7 +7,6 @@ import mraa
 import time
 import subprocess
 import requests
-import shutil
 import os
 from azure.storage import BlobService
 
