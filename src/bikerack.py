@@ -88,6 +88,7 @@ def putToApi(jpegs):
     :return:
     """
     for pic in jpegs:
+        pic = pic.split('.')[0]
         print ("Posting to api: {0}".format(pic))
         r = requests.put(backendUrl+pic.upper())
         print(r.status_code)
